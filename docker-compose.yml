@@ -74,7 +74,7 @@ services:
     image: postgres:14.2
     volumes:
       - cloud-run-sample-data:/var/lib/postgresql/data:delegated
-      - ./postgres/db:/docker-entrypoint-initdb.d #初期データ
+      - ./db:/docker-entrypoint-initdb.d #初期データ
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_CONTAINER_PORT}
 
