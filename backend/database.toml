@@ -1,0 +1,11 @@
+[psql]
+dbname     = "CLOUD_RUN_SAMPLE_DB"
+host       = "cloud_run_sample_db"
+port       = 5432
+user       = "user"
+pass       = "pass"
+sslmode    = "disable"
+whitelist = [
+    "todos",
+    "users"
+]

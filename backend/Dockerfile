@@ -11,4 +11,6 @@ COPY . /backend
 
 RUN go mod tidy && \
     go install github.com/cosmtrek/air@v1.46.0 && \
-    go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+    go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest &&  \
+    go install github.com/volatiletech/sqlboiler/v4@v4.15.0 && \
+    go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.15.0
