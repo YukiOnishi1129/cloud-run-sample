@@ -59,6 +59,9 @@ front-remove-library:
 # create entity
 backend-create-entity:
 	 sqlboiler psql -c backend/database.toml -o backend/database/entity -p entity --no-tests --wipe
+# create table sql
+db-create-table-sql:
+	docker exec -it ${BACKEND_CONTAINER_NAME} sh -c "migrate  create -ext sql -dir database/migrations -seq ${name}"
 ## gqlgen
 backend-gqlgen:
 	cd backend && gqlgen generate
