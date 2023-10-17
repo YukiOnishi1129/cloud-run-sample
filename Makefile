@@ -56,6 +56,9 @@ front-remove-library:
 
 
 # ローカル開発用
+# go library install
+go-add-library:
+	docker exec -it ${BACKEND_CONTAINER_NAME} sh -c "go get ${name}"
 # create entity
 backend-create-entity:
 	docker exec -it ${BACKEND_CONTAINER_NAME} sh -c "sqlboiler psql -c database.toml -o database/entity -p entity --no-tests --wipe"
